@@ -1,4 +1,4 @@
-let url = "http://flowerpowerlcb.com/wp-json/wp/v2/posts";
+let url = "https://flowerpowerlcb.com/wp-json/wp/v2/posts";
 let blogPosts = document.querySelector(".posts");
 console.log(blogPosts);
 
