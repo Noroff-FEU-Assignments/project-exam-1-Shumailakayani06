@@ -5,6 +5,7 @@ console.log(blogPosts);
 fetch(url)
 .then (response => response.json())
 .then (data => {
+    console.log(data)
     postList(data);
 })
 
@@ -16,14 +17,19 @@ function postList(posts){
 
 let pList ="";
 for (let bpost in posts) {
-    console.log(posts);
+    console.log(posts[bpost].content.rendered);
+    
 
     pList += `
     <div>
     
     <li>
     <a href="blogpost.html?id=${posts[bpost].id}">
-     ${posts[bpost].slug}
+     ${posts[bpost].title.rendered}
+     ${posts[bpost].content.rendered}
+     
+     
+
      </a>
      </li>
      
@@ -31,6 +37,9 @@ for (let bpost in posts) {
 
 }
    blogPosts.innerHTML = pList;
+   
  
 }
+
+
 

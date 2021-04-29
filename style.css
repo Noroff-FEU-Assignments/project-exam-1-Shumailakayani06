@@ -1,0 +1,10 @@
+img {
+  max-height: 300px;
+  max-width: 500px;
+}
+
+.headerpic {
+  background-image: url(/images/pexels-pixabay-255501.jpg);
+  height: 50vh;
+  background-size: cover;
+}

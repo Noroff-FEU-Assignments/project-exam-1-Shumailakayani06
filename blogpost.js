@@ -16,13 +16,15 @@ fetch(pUrl)
 .catch((error) =>{
     console.error('Error:' , error);
 });
+
 let postContent = "";
 function specificPost(data){
+    console.log(specificPost);
     
     postContent += `
     <div>
     <h2>${data.title.rendered}</h2>
-    <p>${data.content.rendered}</p>
+    ${data.content.rendered}
     <a href="posts.html">back to posts</a>
     </div>
     
@@ -31,3 +33,4 @@ function specificPost(data){
     blogPost.innerHTML = postContent;
     document.title = data.title.rendered
 }
+
