@@ -7,11 +7,14 @@ const id = new URLSearchParams (qString).get("id");
 
 if (!id) {window.location ="posts.html";}
 
-let pUrl = "https://flowerpowerlcb.com/wp-json/wp/v2/posts/" + id;
+let pUrl = "https://flowerpowerlcb.com/wp-json/wp/v2/posts/"+ id;
 fetch(pUrl)
 .then (response => response.json())
 .then (data => {
     specificPost (data);
+    
+    
+    
 })
 .catch((error) =>{
     console.error('Error:' , error);
@@ -19,18 +22,25 @@ fetch(pUrl)
 
 let postContent = "";
 function specificPost(data){
-    console.log(specificPost);
+    console.log(data);
     
     postContent += `
     <div>
-    <h2>${data.title.rendered}</h2>
-    ${data.content.rendered}
-    <a href="posts.html">back to posts</a>
-    </div>
+   
+    <h1>${data.title.rendered}</h1>
+    ${data.excerpt.rendered}
+    ${data._links["wp:featuredmedia"][0].href}
+   
     
+    <a href="posts.html">back to posts</a>
+   
+    </div>
+    <div>
+    <img src="${data._links["wp:featuredmedia"][0].href}">
+    </div>  
     `
 
     blogPost.innerHTML = postContent;
-    document.title = data.title.rendered
+    document.title = data.title
 }
 

@@ -1,10 +1,32 @@
 img {
-  max-height: 300px;
-  max-width: 500px;
+  height: 300px;
+  width: 450px;
 }
 
+.imgdiv {
+  background-color: rgb(179, 245, 179);
+}
 .headerpic {
   background-image: url(/images/pexels-pixabay-255501.jpg);
-  height: 50vh;
+  height: 40vh;
   background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.postDiv {
+  margin: 1em;
+  display: inline-block;
+  padding: 1em;
+}
+
+.postDiv img {
+  padding: 3em;
+}
+
+.postDiv a {
+  padding: 3em;
 }
