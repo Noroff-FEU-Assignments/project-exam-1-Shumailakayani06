@@ -1,15 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
 img {
   height: 300px;
   width: 450px;
 }
 
 .imgdiv {
-  background-color: rgb(179, 245, 179);
+  background-color: rgb(221, 251, 221);
 }
 .headerpic {
   background-image: url(/images/pexels-pixabay-255501.jpg);
   height: 40vh;
   background-size: cover;
+  width: 100%;
 }
 
 a {
@@ -29,4 +42,8 @@ a {
 
 .postDiv a {
   padding: 3em;
+}
+
+p {
+  max-width: 700px;
 }
