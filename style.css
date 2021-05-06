@@ -17,6 +17,7 @@ img {
 
 .imgdiv {
   background-color: rgb(221, 251, 221);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 .headerpic {
   background-image: url(/images/pexels-pixabay-255501.jpg);
@@ -24,6 +25,8 @@ img {
   background-size: cover;
   width: 100%;
 }
+
+/*posts html style goes here*/
 
 a {
   text-decoration: none;
@@ -37,7 +40,7 @@ a {
 }
 
 .postDiv img {
-  padding: 3em;
+  padding: 1.5em;
 }
 
 .postDiv a {
@@ -46,4 +49,34 @@ a {
 
 p {
   max-width: 700px;
+}
+
+.remainingPosts {
+  display: none;
+}
+
+#btnScrollToTop {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgb(221, 251, 221);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color: rgb(32, 102, 32);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+#btnScrollToTop:active {
+  background: rgb(142, 184, 142);
+}
+
+#btnScrollToTop:hover {
+  width: 60px;
+  height: 60px;
 }

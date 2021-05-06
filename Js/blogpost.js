@@ -32,7 +32,8 @@ function specificPost(data){
     <div>
     <img src="${data._embedded["wp:featuredmedia"][0].source_url}">
     </div> 
-    <p>${data.excerpt.rendered}</p>
+    <p>${data.content.rendered}</p>
+    
     <a href="posts.html">back to posts</a> 
     `
 
