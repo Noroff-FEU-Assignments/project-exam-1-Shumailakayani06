@@ -28,9 +28,10 @@ for (let bpost in posts) {
     pList += `
     
      <div class="postDiv">
-
+     <div> 
+     <a href="blogpost.html?id=${posts[bpost].id}">
      <div class="imgdiv"><img src="${posts[bpost]._embedded["wp:featuredmedia"][0].source_url}"></div>
-     <div> <a href="blogpost.html?id=${posts[bpost].id}">
+     
      ${posts[bpost].title.rendered}
      </a></div>
      
@@ -69,9 +70,10 @@ function getRemainingPosts(rPosts) {
     rPostContent += `
         
     <div class="postDiv">
-
+    <div> 
+    <a href="blogpost.html?id=${rPosts[item].id}">
     <div class="imgdiv"><img src="${rPosts[item]._embedded["wp:featuredmedia"][0].source_url}"></div>
-    <div> <a href="blogpost.html?id=${rPosts[item].id}">
+    
     ${rPosts[item].title.rendered}
     </a></div>
     
@@ -84,13 +86,15 @@ function getRemainingPosts(rPosts) {
     }
 
 
+/* view more button function*/
+
     pButton.onclick = function(){
         remainingPosts.style.display = "inline-block"
         pButton.style.display ="none"
     }
 
 
-
+/* scroll to top button function*/
     const btnScrollToTop = document.querySelector("#btnScrollToTop");
 
     btnScrollToTop.addEventListener("click", function () {
