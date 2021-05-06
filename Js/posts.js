@@ -48,7 +48,7 @@ for (let bpost in posts) {
 const pButton = document.querySelector(".postButton")
 remainingPosts = document.querySelector(".remainingPosts")
 
-const uRl = "http://flowerpowerlcb.com/wp-json/wp/v2/posts?_embed&page=2";
+const uRl = "https://flowerpowerlcb.com/wp-json/wp/v2/posts?_embed&page=2";
 fetch(uRl)
 .then(response => response.json())
 .then(data => {
