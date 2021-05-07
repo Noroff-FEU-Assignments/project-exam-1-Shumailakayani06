@@ -28,7 +28,6 @@ img {
   height: 40vh;
   background-size: cover;
   width: 100%;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
 
 /*posts html style goes here*/
@@ -133,4 +132,18 @@ p {
   background-color: #78b58d;
   color: white;
   border: 2px solid #78b58d;
+}
+
+/*Footer content goes here */
+
+.postsFooter {
+  background-color: #eaf2ec;
+  height: 40vh;
+}
+
+.navDiv {
+  background-color: #eaf2ec;
+  height: 10vh;
+  margin-top: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
