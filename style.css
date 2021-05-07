@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Architects+Daughter&family=Dancing+Script:wght@700&family=Shadows+Into+Light&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -28,6 +30,10 @@ img {
   height: 30vh;
   background-size: cover;
   width: 100%;
+}
+
+.headerpic img {
+  filter: brightness(20%);
 }
 
 /* Navigation Bar */
@@ -150,4 +156,22 @@ p {
 .postsFooter {
   background-color: #eaf2ec;
   height: 40vh;
+}
+
+.logo {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 4em;
+  font-weight: 900;
+  color: black;
+}
+
+span {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.container {
+  text-align: center;
+  margin-top: 10px;
 }
