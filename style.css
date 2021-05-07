@@ -25,9 +25,18 @@ img {
 }
 .headerpic {
   background-image: url(/images/pexels-ella-olsson-1640774.jpg);
-  height: 40vh;
+  height: 30vh;
   background-size: cover;
   width: 100%;
+}
+
+/* Navigation Bar */
+
+.navDiv {
+  background-color: #eaf2ec;
+  height: 8vh;
+  margin-top: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
 
 /*posts html style goes here*/
@@ -49,6 +58,7 @@ a {
   display: inline-block;
   padding: 1em;
   max-width: 400px;
+  border-bottom: 2px solid #eaf2ec;
 }
 
 .postDiv img {
@@ -59,6 +69,7 @@ a {
   color: #78b58d;
   margin-top: 1em;
   margin-bottom: 1em;
+  font-family: "Architects Daughter", cursive;
 }
 
 /* .postDiv a {
@@ -139,11 +150,4 @@ p {
 .postsFooter {
   background-color: #eaf2ec;
   height: 40vh;
-}
-
-.navDiv {
-  background-color: #eaf2ec;
-  height: 10vh;
-  margin-top: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
