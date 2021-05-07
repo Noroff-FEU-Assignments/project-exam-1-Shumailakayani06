@@ -32,7 +32,10 @@ for (let bpost in posts) {
      <a href="blogpost.html?id=${posts[bpost].id}">
      <div class="imgdiv"><img src="${posts[bpost]._embedded["wp:featuredmedia"][0].source_url}"></div>
      
-     ${posts[bpost].title.rendered}
+     <h3 class="blogPostHeading">${posts[bpost].title.rendered}</h3>
+     ${posts[bpost].excerpt.rendered}
+     <button class="blogContinueBtn">Contine reading...</button>
+
      </a></div>
      
     </div>`;
@@ -74,7 +77,9 @@ function getRemainingPosts(rPosts) {
     <a href="blogpost.html?id=${rPosts[item].id}">
     <div class="imgdiv"><img src="${rPosts[item]._embedded["wp:featuredmedia"][0].source_url}"></div>
     
-    ${rPosts[item].title.rendered}
+    <h3 class="blogPostHeading">${rPosts[item].title.rendered}</h3>
+    ${rPosts[item].excerpt.rendered}
+    <button class="blogContinueBtn">Continue reading...</button>
     </a></div>
     
    </div>`;
@@ -89,7 +94,10 @@ function getRemainingPosts(rPosts) {
 /* view more button function*/
 
     pButton.onclick = function(){
-        remainingPosts.style.display = "inline-block"
+        remainingPosts.style.display = "block"
+        
+        
+        
         pButton.style.display ="none"
     }
 

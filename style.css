@@ -11,16 +11,20 @@ header {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
 img {
-  height: 350px;
-  width: 500px;
+  height: 250px;
+  width: 350px;
 }
 
 .imgdiv {
-  background-color: rgb(221, 251, 221);
+  background-color: #eaf2ec;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
+
+.imgdiv:hover {
+  border: 3px solid pink;
+}
 .headerpic {
-  background-image: url(/images/pexels-pixabay-255501.jpg);
+  background-image: url(/images/pexels-ella-olsson-1640774.jpg);
   height: 40vh;
   background-size: cover;
   width: 100%;
@@ -45,15 +49,22 @@ a {
   margin: 1em;
   display: inline-block;
   padding: 1em;
+  max-width: 400px;
 }
 
 .postDiv img {
-  padding: 1.5em;
+  padding: 1em;
 }
 
-.postDiv a {
-  padding: 3em;
+.blogPostHeading {
+  color: #78b58d;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
+
+/* .postDiv a {
+  padding: 3em;
+} */
 
 p {
   max-width: 700px;
@@ -63,6 +74,8 @@ p {
   display: none;
 }
 
+/* buttons style*/
+
 #btnScrollToTop {
   position: fixed;
   right: 20px;
@@ -70,18 +83,14 @@ p {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgb(221, 251, 221);
+  background: #78b58d;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  color: rgb(32, 102, 32);
+  color: white;
   border: none;
   outline: none;
   cursor: pointer;
   font-size: 30px;
   font-weight: lighter;
-}
-
-#btnScrollToTop:active {
-  background: rgb(142, 184, 142);
 }
 
 #btnScrollToTop:hover {
@@ -91,4 +100,37 @@ p {
 
 .viewMoreBtn {
   text-align: center;
+}
+
+.blogContinueBtn {
+  height: 3em;
+  width: 15em;
+  margin-top: 2em;
+  background-color: #78b58d;
+  color: white;
+  border: 2px solid #78b58d;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.blogContinueBtn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #78b58d;
+  border: 2px solid #78b58d;
+}
+
+.postButton {
+  height: 3em;
+  width: 400px;
+  background-color: white;
+  color: #78b58d;
+  border: 2px solid rgb(221, 251, 221);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.postButton:hover {
+  cursor: pointer;
+  background-color: #78b58d;
+  color: white;
+  border: 2px solid #78b58d;
 }
