@@ -41,3 +41,6 @@ function specificPost(data){
     document.title = data.title
 }
 
+
+
+
