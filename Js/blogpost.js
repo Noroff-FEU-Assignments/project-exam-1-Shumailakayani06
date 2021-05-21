@@ -26,20 +26,24 @@ function specificPost(data){
     
     postContent += `
     <div>
-   
     <h1>${data.title.rendered}</h1>
     </div>
     <div>
-    <img src="${data._embedded["wp:featuredmedia"][0].source_url}">
-    </div> 
+    <a class ="clickImg"><img src="${data._embedded["wp:featuredmedia"][0].source_url}"></a>
+    <div class="modalDiv"><img class="modalImg" src="${data._embedded["wp:featuredmedia"][0].source_url}"></div>
     <p>${data.content.rendered}</p>
-    
     <a href="posts.html">back to posts</a> 
     `
 
     blogPost.innerHTML = postContent;
-    document.title = data.title
+    document.title = data.title.rendered
 }
+
+console.log(clickImg);
+
+
+
+
 
 
 
