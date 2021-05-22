@@ -26,20 +26,43 @@ function specificPost(data){
     
     postContent += `
     <div>
-    <h1>${data.title.rendered}</h1>
+    <h1 class="specificPostHeading">${data.title.rendered}</h1>
     </div>
-    <div>
-    <a class ="clickImg"><img src="${data._embedded["wp:featuredmedia"][0].source_url}"></a>
+    <div class="imageDiv">
+    <a class ="clickImg"><img src="${data._embedded["wp:featuredmedia"][0].source_url}"></a></div>
     <div class="modalDiv"><img class="modalImg" src="${data._embedded["wp:featuredmedia"][0].source_url}"></div>
     <p>${data.content.rendered}</p>
     <a href="posts.html">back to posts</a> 
-    `
+    
+    `;
 
     blogPost.innerHTML = postContent;
     document.title = data.title.rendered
+
+    let clickIMG = document.querySelector(".clickImg");
+    let modalDIV = document.querySelector(".modalDiv");
+    console.log(clickIMG);
+    console.log(modalDIV);
+
+   
+    
+    clickIMG.addEventListener("click", function (){
+        modalDIV.style.display = "block";
+    
+    })
+
+    window.addEventListener ("click", function(event){
+     if (event.target == modalDIV ){
+         modalDIV.style.display ="none";
+     }
+    })
+        
+
+
+
 }
 
-console.log(clickImg);
+
 
 
 

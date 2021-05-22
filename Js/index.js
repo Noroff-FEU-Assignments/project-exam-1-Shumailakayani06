@@ -40,40 +40,40 @@ function homePosts (hPost){
 
  /* remaining post section */
 
-//
-
-// 
-
-// let uRl = "https://flowerpowerlcb.com/wp-json/wp/v2/posts?_embed&page=2";
-// fetch(uRl)
-// .then(response => response.json())
-// .then(data => {
-//     getPlusPosts(data)
-//     console.log(data);
-// })
-// .catch((error)=> {
-//     console.error('Error', error);
-// });
-
-// let getPlusContent ="";
-// function getPlusPosts(getPlus){
-//     for(let item in getPlus){
-//         getPlusContent += `
-//         <ul class="carousel_track">
-//         <li class="carousel_slide">
-//         <img src="${getPlus[item]._embedded["wp:featuredmedia"][0].source_url}">
-//         </li>
-//         </ul>
-//         `
-//         ;
-//     }
-
-//     carousel_track_container.innerHTML= getPlusContent;
-//     console.log(getPlusContent);
-// }
 
 
-//carousel //
+/* Carousel slide */
+
+let uRl = "https://flowerpowerlcb.com/wp-json/wp/v2/posts?_embed&page=2";
+fetch(uRl)
+.then(response => response.json())
+.then(data => {
+    getPlusPosts(data)
+    console.log(data);
+})
+.catch((error)=> {
+    console.error('Error', error);
+});
+
+let getPlusContent ="";
+function getPlusPosts(getPlus){
+    for(let item in getPlus){
+        getPlusContent += `
+        <ul class="carousel_track">
+        <li class="carousel_slide">
+        <img src="${getPlus[item]._embedded["wp:featuredmedia"][0].source_url}">
+        </li>
+        </ul>
+        `
+        ;
+    }
+
+    carousel_track_container.innerHTML= getPlusContent;
+    console.log(getPlusContent);
+}
+
+
+
 
 const track = document.querySelector(".carousel_track");
 const slides = Array.from(track.children);
@@ -96,28 +96,60 @@ console.log(slides);
 
 
 
-//arrange the lsides next to one another
+// arrange the lsides next to one another
 
-// const setSlidePosition = (slide, index) => {
-//     slide.style.left = slideWidth * index + "px";
-// };
-// slides.forEach(setSlidePosition);
+const setSlidePosition = (slide, index) => {
+    slide.style.left = slideWidth * index + "px";
+};
+slides.forEach(setSlidePosition);
 
-// //when i click left, move slides to the left
-// //when i click right, move slides to the right
+//when i click left, move slides to the left
+//when i click right, move slides to the right
 
-// nextBtn.addEventListener("click", e => {
-//     const currentSlide = track.querySelector(".current-slide")
-//     console.log(currentSlide);
-//     const nextSlide = currentSlide.nextElementSibling;
-//     const amountToMove = nextSlide
-//     console.log(nextSlide);
+nextBtn.addEventListener("click", e => {
+    const currentSlide = track.querySelector(".current-slide")
+    console.log(currentSlide);
+    const nextSlide = currentSlide.nextElementSibling;
+    const amountToMove = nextSlide
+    console.log(nextSlide);
 
-//     track.style.transform ="translateX("+ amountToMove + ")";
+    track.style.transform ="translateX("+ amountToMove + ")";
     
-// })
+})
 
-//when i click the nav indicators, move to that slide
+// when i click the nav indicators, move to that slide
+
+
+
+
+
+/* Navigration Bar */
+
+const navSlide = () => {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-link");
+    const navLinks = document.querySelectorAll(".nav-link li");
+    // toggle nav
+    burger.addEventListener("click", () => {
+        //toggle nav
+        nav.classList.toggle("nav-active");
+
+        //animate links
+
+        navLinks.forEach((link, index) => {
+            if (link.style.animation){
+                link.style.animation ="";
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+            }
+        });
+    //burger animation
+    burger.classList.toggle("toggle");
+   
+    });
+}
+
+navSlide();
 
 
 

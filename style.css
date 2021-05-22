@@ -22,12 +22,19 @@ img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
+.imgdiv {
+  transition: all 0.3s ease-out;
+  object-fit: cover;
+}
+
 .imgdiv:hover {
-  border: 3px solid pink;
+  /* border: 3px solid pink; */
+  transform: scale(1.1);
+  opacity: 50%;
 }
 .headerpic {
   background-image: url(/images/pexels-ella-olsson-1640774.jpg);
-  height: 30vh;
+  height: 20vh;
   background-size: cover;
   width: 100%;
 }
@@ -36,23 +43,137 @@ img {
   filter: brightness(20%);
 }
 
-/* homepage contents starts here */
-
-/* Navigation Bar */
-
-.navDiv {
-  background-color: #eaf2ec;
-  height: 8vh;
-  margin-top: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+.logo {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 2em;
+  font-weight: 900;
+  color: black;
+  position: absolute;
 }
 
-/*posts html style goes here*/
+.container {
+  justify-content: center;
+  margin-top: 10px;
+}
 
 a {
   text-decoration: none;
   color: black;
 }
+/* homepage contents starts here */
+
+/* Navigation Bar */
+
+.NavBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #eaf2ec;
+}
+
+.logoHome {
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 25px;
+  font-weight: 900;
+}
+.Love {
+  font-family: "Shadows Into Light", cursive;
+}
+
+.Greens {
+  font-family: "Shadows Into Light", cursive;
+}
+.nav-link {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  z-index: 1;
+}
+.nav-link li {
+  list-style: none;
+}
+
+.nav-link a {
+  color: black;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-size: 14px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav-link {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-link {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 28vh;
+    background-color: #eaf2ec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translatex(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-link li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  transform: translatex(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translatex(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translatex(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/*posts html style goes here*/
 
 .posts {
   text-align: center;
@@ -62,7 +183,7 @@ a {
 }
 
 .postDiv {
-  margin: 1em;
+  margin: 2em auto;
   display: inline-block;
   padding: 1em;
   max-width: 400px;
@@ -81,13 +202,53 @@ a {
 }
 
 p {
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .remainingPosts {
   display: none;
 }
 
+/* specific blog post site */
+
+.specificPostHeading {
+  color: #78b58d;
+  margin-top: 1em;
+  font-family: "Architects Daughter", cursive;
+  font-size: 2em;
+}
+
+.blogPost {
+  display: grid;
+  text-align: center;
+  align-items: center;
+  margin: 10px;
+  justify-content: center;
+}
+
+.imageDiv img {
+  transition: all 0.3s ease-out;
+  object-fit: cover;
+  cursor: pointer;
+  padding: 20px;
+  background: #eaf2ec;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  height: 300px;
+  width: 450px;
+}
+
+.imageDiv img:hover {
+  /* transform: scale(0.9); */
+  opacity: 50%;
+}
+
+.imageDiv {
+  overflow: hidden;
+  margin: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
 /* buttons style*/
 
 #btnScrollToTop {
@@ -156,33 +317,23 @@ p {
   height: 40vh;
 }
 
-.logo {
-  font-family: "Shadows Into Light", cursive;
-  font-size: 4em;
-  font-weight: 900;
-  color: black;
-}
-
-span {
-  font-family: "Shadows Into Light", cursive;
-  font-size: 2em;
-  font-weight: 400;
-}
-
-.container {
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* carousel */
+/* carousel*/
 
 /* manage the size of carousel */
 
 .carousel {
   position: relative;
-  height: 600px;
+  height: 700px;
   width: 50%;
   margin: 0 auto;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel {
+    width: 50%;
+    height: 400px;
+  }
 }
 
 .carousel_image {
@@ -216,9 +367,11 @@ span {
   position: absolute;
   top: 30%;
   transform: translateY(-50%);
-  background: transparent;
+  background: #eaf2ec;
   border: 0;
   cursor: pointer;
+  height: 420px;
+  color: #78b58d;
 }
 
 .BtnLeft {
@@ -232,6 +385,13 @@ span {
 .fas {
   width: 25px;
   font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .carouselBtn {
+    background: #eaf2ec;
+    height: 240px;
+  }
 }
 
 /* carousel indicator */
@@ -257,16 +417,22 @@ span {
 
 /* modal img*/
 
-.modalImg {
-  padding: 10px;
+.modalDiv {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  display: none;
 }
 
-.modalDiv {
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background: #eaf2ec;
-  display: none;
+.modalImg {
+  left: 50%;
+  height: 70%;
+  width: 70%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: all 1.1s ease-out;
 }
