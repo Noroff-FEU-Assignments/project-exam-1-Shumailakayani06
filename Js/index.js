@@ -29,9 +29,13 @@ for(let element in data){
     apiImages.push(imageSrc)
 
     homeBlogPosts += `
+    
     <a href="blogpost.html?id=${data[element].id}">
     <img class="carousel_image" src="${data[element]._embedded["wp:featuredmedia"][0].source_url}" alt="blog post images">
-    </a>`;
+    </a>
+    
+    `
+    ;
     console.log(data[element]);
     console.log(apiImages.length);
 }
@@ -41,29 +45,32 @@ carouselImages.innerHTML= homeBlogPosts;
 
 /* carousel slider */
 
-const numberOfImages = apiImages.length;
+const numberOfImages = apiImages.length/3-1;
 let imageIndex = 1;
 let translateX = 0;
+
+
 
 carouselButtons.forEach(buttons =>{
 buttons.addEventListener("click", event => {
    if(event.target.id === "previous"){
        if(imageIndex !== 1){
            imageIndex--;
-           translateX += 350;
+           translateX += 1080;
        }
    } else{
        if (imageIndex !== numberOfImages) {
            imageIndex++;
-           translateX -=300;
+           translateX -= 1080;
        }
    }
+   carouselImages.style.transform = `translateX(${translateX}px)`;
 });
 })
 ;
 
-
 }
+
 
 
 
