@@ -26,7 +26,7 @@ function specificPost(data){
     
     postContent += `
     <div>
-    <h1 class="specificPostHeading">${data.title.rendered}</h1>
+    <h1 specificPostHeading>${data.title.rendered}</h1>
     </div>
     <div class="imageDiv">
     <a class ="clickImg"><img src="${data._embedded["wp:featuredmedia"][0].source_url}"></a></div>

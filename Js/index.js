@@ -2,9 +2,14 @@ let url = "https://flowerpowerlcb.com/wp-json/wp/v2/posts?_embed&per_page=12";
 
 
 
-let carousel_track_container = document.querySelector(".carousel_track_container");
 
-console.log(carousel_track_container);
+const carouselImages = document.querySelector (".carousel__images");
+const carouselButtons = document.querySelectorAll(".carousel__button");
+
+
+let apiImages = [];
+
+
 
 fetch(url)
 .then (response => response.json())
@@ -12,11 +17,57 @@ fetch(url)
 
     homePosts(data);
     console.log(data)
+    for(let element in data){
+        let imageSrc = data[element]._embedded["wp:featuredmedia"][0].source_url;
+        apiImages.push(imageSrc)
+
+
+        const numberOfImages = imageSrc.length;
+        let imageIndex = 1;
+        let translateX = 0;
+       
+        carouselButtons.forEach(button =>{
+       button.addEventListener("click", Event => {
+           if(Event.target.id === "previous"){
+               if(imageIndex !== 1){
+                   imageIndex--;
+                   translateX += 350;
+               }
+           } else{
+               if (imageIndex !== numberOfImages) {
+                   imageIndex++;
+                   translateX -=300;
+               }
+           }
+       });
+        })
+       ;
+
+
+
+        // const numberOfImages = data[element]._embedded["wp:featuredmedia"][0].source_url.lenght;
+        
+
+      
+
+        console.log(imageSrc.length);
+     
+    }
+
+    
 })
+
 
 .catch((error) => {
     console.error('Error:', error);
 });
+
+console.log(apiImages.length);
+
+
+
+
+
 
 function homePosts (hPost){
 
@@ -25,99 +76,46 @@ function homePosts (hPost){
         console.log(hPost[posts]);
 
         homeBlogPosts += `
-        <ul class="carousel_track">
-        <li class="carousel_slide">
+       
         <img class="carousel_image" src="${hPost[posts]._embedded["wp:featuredmedia"][0].source_url}" alt="blog post images">
-        </li>
-        </ul>
+        
         `;
 
-    }
-    carousel_track_container.innerHTML= homeBlogPosts;
+      
+   
+
     
+        
 
-}
-
- /* remaining post section */
-
-
-
-/* Carousel slide */
-
-let uRl = "https://flowerpowerlcb.com/wp-json/wp/v2/posts?_embed&page=2";
-fetch(uRl)
-.then(response => response.json())
-.then(data => {
-    getPlusPosts(data)
-    console.log(data);
-})
-.catch((error)=> {
-    console.error('Error', error);
-});
-
-let getPlusContent ="";
-function getPlusPosts(getPlus){
-    for(let item in getPlus){
-        getPlusContent += `
-        <ul class="carousel_track">
-        <li class="carousel_slide">
-        <img src="${getPlus[item]._embedded["wp:featuredmedia"][0].source_url}">
-        </li>
-        </ul>
-        `
-        ;
     }
-
-    carousel_track_container.innerHTML= getPlusContent;
-    console.log(getPlusContent);
-}
+    carouselImages.innerHTML= homeBlogPosts;
 
 
 
-
-const track = document.querySelector(".carousel_track");
-const slides = Array.from(track.children);
-const nextBtn = document.querySelector(".BtnRight");
-const prevButton = document.querySelector(".BtnLeft");
-const dotsNav = document.querySelector(".carousel_nav");
-const dots = Array.from(dotsNav.children);
-
-const slideWidth = slides[0].getBoundingClientRect().width;
-
-console.log(slideWidth);
-
-
-
-
-console.log(track);
-console.log(slides);
+ }
 
 
 
 
 
-// arrange the lsides next to one another
+//  /* remaining post section */
 
-const setSlidePosition = (slide, index) => {
-    slide.style.left = slideWidth * index + "px";
-};
-slides.forEach(setSlidePosition);
 
-//when i click left, move slides to the left
-//when i click right, move slides to the right
 
-nextBtn.addEventListener("click", e => {
-    const currentSlide = track.querySelector(".current-slide")
-    console.log(currentSlide);
-    const nextSlide = currentSlide.nextElementSibling;
-    const amountToMove = nextSlide
-    console.log(nextSlide);
+// /* Carousel slide */
 
-    track.style.transform ="translateX("+ amountToMove + ")";
-    
-})
 
-// when i click the nav indicators, move to that slide
+
+
+//carousel btns
+
+
+
+// counter
+
+ 
+
+
 
 
 
@@ -150,13 +148,3 @@ const navSlide = () => {
 }
 
 navSlide();
-
-
-
-
-
-
-
-
-
-
