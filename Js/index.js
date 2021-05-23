@@ -1,15 +1,11 @@
 let url = "https://flowerpowerlcb.com/wp-json/wp/v2/posts?_embed&per_page=12";
 
 
-
-
 const carouselImages = document.querySelector (".carousel__images");
 const carouselButtons = document.querySelectorAll(".carousel__button");
 
 
 let apiImages = [];
-
-
 
 fetch(url)
 .then (response => response.json())
@@ -17,103 +13,59 @@ fetch(url)
 
     homePosts(data);
     console.log(data)
-    for(let element in data){
-        let imageSrc = data[element]._embedded["wp:featuredmedia"][0].source_url;
-        apiImages.push(imageSrc)
-
-
-        const numberOfImages = imageSrc.length;
-        let imageIndex = 1;
-        let translateX = 0;
-       
-        carouselButtons.forEach(button =>{
-       button.addEventListener("click", Event => {
-           if(Event.target.id === "previous"){
-               if(imageIndex !== 1){
-                   imageIndex--;
-                   translateX += 350;
-               }
-           } else{
-               if (imageIndex !== numberOfImages) {
-                   imageIndex++;
-                   translateX -=300;
-               }
-           }
-       });
-        })
-       ;
-
-
-
-        // const numberOfImages = data[element]._embedded["wp:featuredmedia"][0].source_url.lenght;
-        
-
-      
-
-        console.log(imageSrc.length);
-     
-    }
-
-    
+ 
 })
-
 
 .catch((error) => {
     console.error('Error:', error);
 });
 
-console.log(apiImages.length);
+console.log(apiImages);
+
+function homePosts(data){
+let homeBlogPosts =[];
+for(let element in data){
+    let imageSrc = data[element]._embedded["wp:featuredmedia"][0].source_url;
+    apiImages.push(imageSrc)
+
+    homeBlogPosts += `
+    <a href="blogpost.html?id=${data[element].id}">
+    <img class="carousel_image" src="${data[element]._embedded["wp:featuredmedia"][0].source_url}" alt="blog post images">
+    </a>`;
+    console.log(data[element]);
+    console.log(apiImages.length);
+}
+carouselImages.innerHTML= homeBlogPosts;
 
 
 
+/* carousel slider */
+
+const numberOfImages = apiImages.length;
+let imageIndex = 1;
+let translateX = 0;
+
+carouselButtons.forEach(buttons =>{
+buttons.addEventListener("click", event => {
+   if(event.target.id === "previous"){
+       if(imageIndex !== 1){
+           imageIndex--;
+           translateX += 350;
+       }
+   } else{
+       if (imageIndex !== numberOfImages) {
+           imageIndex++;
+           translateX -=300;
+       }
+   }
+});
+})
+;
 
 
-
-function homePosts (hPost){
-
-    let homeBlogPosts ="";
-    for (let posts in hPost) {
-        console.log(hPost[posts]);
-
-        homeBlogPosts += `
-       
-        <img class="carousel_image" src="${hPost[posts]._embedded["wp:featuredmedia"][0].source_url}" alt="blog post images">
-        
-        `;
-
-      
-   
-
-    
-        
-
-    }
-    carouselImages.innerHTML= homeBlogPosts;
+}
 
 
-
- }
-
-
-
-
-
-//  /* remaining post section */
-
-
-
-// /* Carousel slide */
-
-
-
-
-//carousel btns
-
-
-
-// counter
-
- 
 
 
 
@@ -148,3 +100,14 @@ const navSlide = () => {
 }
 
 navSlide();
+
+
+
+
+
+
+
+
+
+
+
