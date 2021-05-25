@@ -12,6 +12,17 @@ header {
   justify-content: center;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
+
+.homePageHeading {
+  font-family: "Shadows Into Light", cursive;
+  color: #78b58d;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 2em auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
 img {
   height: 180px;
   width: 250px;
@@ -27,6 +38,11 @@ img {
   object-fit: cover;
 }
 
+.imgdiv img {
+  height: 250px;
+  width: 350px;
+}
+
 .imgdiv:hover {
   /* border: 3px solid pink; */
   transform: scale(1.1);
@@ -37,6 +53,110 @@ img {
   height: 20vh;
   background-size: cover;
   width: 100%;
+}
+
+.LemonPicDiv {
+  background-image: url(/images/pexels-dominika-roseclay-2208836.jpg);
+  height: 35vh;
+  background-size: cover;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  align-items: center;
+}
+
+.dYKF {
+  margin: 3em;
+  padding: 2em;
+  border: 3px black;
+  display: inline-block;
+  z-index: 1;
+  background-color: #eaf2ecd2;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+}
+.fas.fa-lemon {
+  font-size: 1em;
+  color: rgb(255, 230, 0);
+  margin-left: 0.5em;
+}
+
+.lemonHeading {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #78b58d;
+}
+
+.lemonP {
+  letter-spacing: 2px;
+  color: grey;
+}
+
+.subscribeDiv {
+  display: flex;
+  margin: 2em auto;
+  background: #eaf2ec;
+  width: 100%;
+  padding: 1em;
+  justify-content: space-around;
+}
+
+.subHeading {
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  margin-bottom: 1em;
+}
+
+.sBText p {
+  letter-spacing: 2px;
+  color: grey;
+}
+
+.subscribeEmail,
+.sBText {
+  margin: 3em;
+}
+
+.subscribeEmail {
+  align-items: center;
+}
+
+#email {
+  padding: 6px 40px;
+  background: #eaf2ec;
+  box-sizing: border-box;
+  letter-spacing: 2px;
+}
+
+.submitButton {
+  font-size: 0.8rem;
+  padding: 8px 20px;
+  background: #78b58d;
+  border: none;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.viewAllPosts {
+  text-align: center;
+  margin-bottom: 3em;
+}
+.AllButton {
+  height: 3em;
+  width: 400px;
+  background-color: white;
+  color: #78b58d;
+  border: 2px solid rgb(221, 251, 221);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  letter-spacing: 2px;
+}
+
+.AllButton:hover {
+  cursor: pointer;
+  background-color: #78b58d;
+  color: white;
+  border: 2px solid #78b58d;
 }
 
 .headerpic img {
@@ -211,6 +331,11 @@ p {
 
 /* specific blog post site */
 
+.sPostDiv {
+  display: flex;
+  margin: 4em;
+}
+
 .specificPostHeading {
   color: #78b58d;
   margin-top: 1em;
@@ -220,10 +345,7 @@ p {
 
 .blogPost {
   display: grid;
-  text-align: center;
-  align-items: center;
   margin: 10px;
-  justify-content: center;
 }
 
 .imageDiv img {
@@ -245,9 +367,10 @@ p {
 .imageDiv {
   overflow: hidden;
   margin: 30px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+}
+
+.recepieDiv {
+  border: 2px solid #78b58d;
 }
 /* buttons style*/
 
@@ -315,6 +438,12 @@ p {
 .postsFooter {
   background-color: #eaf2ec;
   height: 40vh;
+}
+
+.footerDiv {
+  background-color: #eaf2ec;
+  height: 40vh;
+  margin: 3em auto;
 }
 
 /* carousel*/
