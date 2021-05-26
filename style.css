@@ -97,6 +97,7 @@ img {
   width: 100%;
   padding: 1em;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .subHeading {
@@ -115,11 +116,7 @@ img {
   margin: 3em;
 }
 
-.subscribeEmail {
-  align-items: center;
-}
-
-#email {
+#homeemail {
   padding: 6px 40px;
   background: #eaf2ec;
   box-sizing: border-box;
@@ -136,6 +133,9 @@ img {
   letter-spacing: 3px;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.subscribeEmail {
 }
 
 .viewAllPosts {
@@ -435,15 +435,52 @@ p {
 
 /*Footer content goes here */
 
-.postsFooter {
-  background-color: #eaf2ec;
-  height: 40vh;
+footer {
+  background: #eaf2ec;
 }
 
-.footerDiv {
-  background-color: #eaf2ec;
-  height: 40vh;
+.footerContainer {
   margin: 3em auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.footerContainer div {
+  margin: 1em auto;
+  padding: 3em;
+  margin-left: 0;
+}
+
+.footerHeading {
+  color: grey;
+}
+
+.footerContainer li {
+  list-style: none;
+  padding: 10px;
+  letter-spacing: 3px;
+  font-size: 14px;
+}
+
+.footerIcon {
+  display: flex;
+  justify-content: center;
+}
+
+.footerIcon i {
+  font-size: 1.8em;
+  margin-top: 1em;
+}
+
+.footerContact i {
+  color: #78b58d;
+  font-size: 1.2em;
+  margin-right: 1em;
+}
+
+.copyright {
+  margin-left: 2em;
 }
 
 /* carousel*/
@@ -522,4 +559,90 @@ p {
   position: absolute;
   transform: translate(-50%, -50%);
   transition: all 1.1s ease-out;
+}
+
+/* contact page*/
+.formDiv {
+  margin: 2em;
+  padding: 3em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  background: #eaf2ec;
+}
+.contact-form div {
+  margin: 2em;
+}
+
+.error-message {
+  color: red;
+}
+
+.contactDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contactDivInfo {
+  margin: 2em;
+}
+
+.contactDivInfo li {
+  list-style: none;
+  margin: 2em;
+  color: darkslategrey;
+  letter-spacing: 2px;
+}
+
+.contactDivInfo li a {
+  color: darkslategrey;
+}
+
+.contactDivInfo i {
+  margin-right: 1em;
+}
+
+.fas.fa-map-marker-alt {
+  color: red;
+}
+
+.fas.fa-phone-alt {
+  color: black;
+}
+
+.fas.fa-envelope {
+  color: blue;
+}
+
+.contactHeading {
+  font-size: 1.5em;
+  margin-bottom: 3em;
+  margin-left: 1.2em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #78b58d;
+}
+
+.contactIcon {
+  display: flex;
+}
+
+.contactIcon i {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+label {
+  color: darkslategrey;
+}
+
+#name,
+#email,
+#subject {
+  padding: 8px 40px;
+  border: none;
+}
+
+#bio {
+  width: 100%;
+  border: none;
 }
