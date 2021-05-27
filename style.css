@@ -14,7 +14,7 @@ header {
 }
 
 .homePageHeading {
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Architects Daughter", cursive;
   color: #78b58d;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -426,6 +426,21 @@ p {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
+.backButton {
+  height: 3em;
+  width: 200px;
+  background-color: white;
+  color: #78b58d;
+  border: 2px solid rgb(221, 251, 221);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.fas.fa-arrow-left {
+  margin-right: 0.8em;
+}
+
 .postButton:hover {
   cursor: pointer;
   background-color: #78b58d;
@@ -573,6 +588,12 @@ footer {
   margin: 2em;
 }
 
+.contactImg {
+  height: 320px;
+  width: 450px;
+  margin-left: 2em;
+}
+
 .error-message {
   color: red;
 }
@@ -615,7 +636,7 @@ footer {
 
 .contactHeading {
   font-size: 1.5em;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   margin-left: 1.2em;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -645,4 +666,60 @@ label {
 #bio {
   width: 100%;
   border: none;
+}
+
+/* about us page content */
+
+.aboutUsH1 {
+  font-family: "Architects Daughter", cursive;
+  letter-spacing: 2px;
+  color: #78b58d;
+  margin: 2em;
+}
+
+.aboutUs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.aboutImages {
+  display: flex;
+  margin: 2em;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: 5em;
+
+  padding-left: 2em;
+}
+
+.aboutImages img {
+  height: 280px;
+  width: 400px;
+}
+
+.aboutUsDiv {
+  height: 280px;
+  width: 400px;
+}
+
+.aboutUsDiv h1 {
+  margin-left: 0.9em;
+  margin-bottom: 0.7em;
+  color: #78b58d;
+  letter-spacing: 2px;
+}
+
+.aboutUsDiv h4 {
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  color: #78b58d;
+  margin-left: 1.2em;
+  margin-bottom: 1em;
+}
+
+.aboutUsDiv p {
+  font-size: 18px;
+  margin-left: 1.5em;
+  margin-right: 1em;
+  letter-spacing: 1.5px;
 }
