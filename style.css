@@ -540,6 +540,18 @@ footer {
   z-index: 1;
 }
 
+@media screen and (max-width: 768px) {
+  .carousel {
+    width: 360px;
+    margin: 0s;
+  }
+
+  img {
+    height: 270px;
+    width: 370px;
+  }
+}
+
 #previous {
 }
 
