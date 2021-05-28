@@ -139,7 +139,6 @@ img {
   letter-spacing: 3px;
   text-transform: uppercase;
   cursor: pointer;
-
   height: 60px;
 }
 
@@ -184,6 +183,22 @@ img {
 a {
   text-decoration: none;
   color: black;
+}
+
+@media screen and (max-width: 768px) {
+  #homeemail {
+    width: 250px;
+    height: 50px;
+  }
+
+  .subscribeEmail {
+    display: inline-block;
+  }
+
+  .submitButton {
+    width: 250px;
+    height: 50px;
+  }
 }
 /* homepage contents starts here */
 
