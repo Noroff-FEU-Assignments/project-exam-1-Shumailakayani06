@@ -135,9 +135,6 @@ img {
   cursor: pointer;
 }
 
-.subscribeEmail {
-}
-
 .viewAllPosts {
   text-align: center;
   margin-bottom: 3em;
@@ -210,7 +207,7 @@ a {
   display: flex;
   justify-content: space-around;
   width: 40%;
-  z-index: 1;
+  z-index: 2;
 }
 .nav-link li {
   list-style: none;
@@ -221,6 +218,11 @@ a {
   text-decoration: none;
   letter-spacing: 3px;
   font-size: 14px;
+}
+
+.nav-link a:hover {
+  transform: scale(1.1);
+  opacity: 50%;
 }
 
 .burger {
@@ -236,7 +238,7 @@ a {
   transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   .nav-link {
     width: 45%;
   }
@@ -249,9 +251,9 @@ a {
   .nav-link {
     position: absolute;
     right: 0px;
-    height: 92vh;
+    height: 70vh;
     top: 28vh;
-    background-color: #eaf2ec;
+    background-color: #eaf2ecef;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -262,6 +264,17 @@ a {
 
   .nav-link li {
     opacity: 0;
+  }
+
+  .nav-link a {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  .nav-link a:hover {
+    transform: scale(1.1);
+    opacity: 50%;
   }
   .burger {
     display: block;
@@ -454,6 +467,18 @@ footer {
   background: #eaf2ec;
 }
 
+.footerMenu li {
+  cursor: pointer;
+}
+
+.footerInfo li {
+  cursor: pointer;
+}
+
+.footerContact li {
+  cursor: pointer;
+}
+
 .footerContainer {
   margin: 3em auto;
   display: flex;
@@ -478,6 +503,10 @@ footer {
   font-size: 14px;
 }
 
+.footerContainer li:hover {
+  opacity: 50%;
+}
+
 .footerIcon {
   display: flex;
   justify-content: center;
@@ -486,12 +515,14 @@ footer {
 .footerIcon i {
   font-size: 1.8em;
   margin-top: 1em;
+  cursor: pointer;
 }
 
 .footerContact i {
   color: #78b58d;
   font-size: 1.2em;
   margin-right: 1em;
+  cursor: pointer;
 }
 
 .copyright {
@@ -510,6 +541,7 @@ footer {
   width: 1080px;
   border-bottom: 2px solid #eaf2ec;
   border-top: 2px solid #eaf2ec;
+  transition: transform 0.3s ease-out;
 }
 
 .carousel__images {
@@ -518,13 +550,17 @@ footer {
   transition: transform 0.25s;
 }
 
+.carousel__images a {
+}
+
 .carousel__images img {
   border-radius: 5px;
   margin: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
-.carousel__button {
+.carousel__button,
+.carousel__buttons {
   background: #eaf2ec;
   border: 0;
   border-radius: 50%;
@@ -550,9 +586,27 @@ footer {
     height: 270px;
     width: 370px;
   }
+
+  .carousel__button {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .carousel {
+    width: 700px;
+    margin: 0s;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel__buttons {
+    display: none;
+  }
 }
 
 #previous {
+  left: 5px;
 }
 
 #next {

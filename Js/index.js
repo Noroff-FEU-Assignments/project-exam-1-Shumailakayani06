@@ -5,6 +5,8 @@ const carouselImages = document.querySelector (".carousel__images");
 const carouselButtons = document.querySelectorAll(".carousel__button");
 
 
+
+
 let apiImages = [];
 
 fetch(url)
@@ -53,7 +55,8 @@ let translateX = 0;
 
 carouselButtons.forEach(buttons =>{
 buttons.addEventListener("click", event => {
-   if(event.target.id === "previous"){
+    
+   if(event.target.id === "previouss" ){
        if(imageIndex !== 1){
            imageIndex--;
            translateX += 1080;
@@ -70,6 +73,17 @@ buttons.addEventListener("click", event => {
 ;
 
 }
+
+
+    
+
+
+
+
+
+
+
+
 
 
 
@@ -90,6 +104,7 @@ const navSlide = () => {
     burger.addEventListener("click", () => {
         //toggle nav
         nav.classList.toggle("nav-active");
+        nav.style.display = "flex";
 
         //animate links
 
@@ -111,10 +126,33 @@ navSlide();
 
 
 
+/* touch slide */
 
+let initialPosition = null;
+let moving = false;
+let transform = 0;
 
+window.addEventListener("mousedown" , (e) =>{
+     initialPosition = e.pageX;
+     moving = true;
+     const transformMatrix = window.getComputedStyle(carouselImages).getPropertyValue("transform");
+     if ( transformMatrix !== "none"){
+      transform = (transformMatrix.split(".")[0].trim());
+     }
+console.log(transform);
+     
+});
 
+window.addEventListener("mousemove" , (e)=> {
+    if(moving) {
 
+   
+const currentPosition = e.pageX;
+const diff = currentPosition - initialPosition;
+carouselImages.style.transform = `translateX(${diff}px)`;
+    }
+});
 
-
-
+window.addEventListener("mouseup" , (e) =>{
+    moving = false;
+})
