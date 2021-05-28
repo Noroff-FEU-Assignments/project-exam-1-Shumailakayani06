@@ -96,7 +96,7 @@ img {
   background: #eaf2ec;
   width: 100%;
   padding: 1em;
-  justify-content: space-around;
+
   flex-wrap: wrap;
 }
 
@@ -116,11 +116,17 @@ img {
   margin: 3em;
 }
 
+.subscribeEmail {
+  display: flex;
+}
+
 #homeemail {
-  padding: 6px 40px;
+  padding: 4px 40px;
   background: #eaf2ec;
   box-sizing: border-box;
   letter-spacing: 2px;
+  width: 250px;
+  height: 60px;
 }
 
 .submitButton {
@@ -133,6 +139,8 @@ img {
   letter-spacing: 3px;
   text-transform: uppercase;
   cursor: pointer;
+
+  height: 60px;
 }
 
 .viewAllPosts {
@@ -141,7 +149,7 @@ img {
 }
 .AllButton {
   height: 3em;
-  width: 400px;
+  width: 300px;
   background-color: white;
   color: #78b58d;
   border: 2px solid rgb(221, 251, 221);
@@ -187,6 +195,7 @@ a {
   align-items: center;
   min-height: 8vh;
   background-color: #eaf2ec;
+  width: 100%;
 }
 
 .logoHome {
@@ -344,6 +353,14 @@ p {
 
 /* specific blog post site */
 
+.blogPostHeading {
+  letter-spacing: 1px;
+}
+
+p {
+  letter-spacing: 1.5px;
+}
+
 .sPostDiv {
   display: flex;
   margin: 4em;
@@ -352,8 +369,10 @@ p {
 .specificPostHeading {
   color: #78b58d;
   margin-top: 1em;
+  margin-bottom: 1em;
   font-family: "Architects Daughter", cursive;
   font-size: 2em;
+  margin-left: 0em;
 }
 
 .blogPost {
@@ -368,8 +387,9 @@ p {
   padding: 20px;
   background: #eaf2ec;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  height: 300px;
-  width: 450px;
+
+  width: 80%;
+  height: 80%;
 }
 
 .imageDiv img:hover {
@@ -378,8 +398,7 @@ p {
 }
 
 .imageDiv {
-  overflow: hidden;
-  margin: 30px;
+  margin-left: 0;
 }
 
 .recepieDiv {
@@ -550,9 +569,6 @@ footer {
   transition: transform 0.25s;
 }
 
-.carousel__images a {
-}
-
 .carousel__images img {
   border-radius: 5px;
   margin: 10px;
@@ -578,13 +594,13 @@ footer {
 
 @media screen and (max-width: 768px) {
   .carousel {
-    width: 360px;
+    width: 350px;
     margin: 0s;
   }
 
   img {
     height: 270px;
-    width: 370px;
+    width: 350px;
   }
 
   .carousel__button {
@@ -634,7 +650,7 @@ footer {
 
 .modalImg {
   left: 50%;
-  height: 70%;
+  height: 80%;
   width: 70%;
   top: 50%;
   position: absolute;
@@ -734,6 +750,13 @@ label {
   border: none;
 }
 
+@media screen and (max-width: 768px) {
+  .contactImg {
+    height: 250px;
+    width: 350px;
+  }
+}
+
 /* about us page content */
 
 .aboutUsH1 {
@@ -788,4 +811,39 @@ label {
   margin-left: 1.5em;
   margin-right: 1em;
   letter-spacing: 1.5px;
+}
+
+@media screen and (max-width: 768px) {
+  .aboutImages img {
+    height: 250px;
+    width: 350px;
+  }
+
+  .aboutImages {
+    margin-left: 1em;
+  }
+
+  .aboutUsDiv {
+    height: 250px;
+    width: 350px;
+    margin-bottom: 3em;
+  }
+
+  .aboutUsDiv p {
+    margin-left: 0;
+  }
+
+  .aboutUsDiv h4 {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .aboutUsDiv p {
+    margin-left: 0;
+  }
+
+  .aboutUsDiv h4 {
+    margin-left: 0;
+  }
 }

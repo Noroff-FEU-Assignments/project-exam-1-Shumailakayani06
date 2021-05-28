@@ -78,7 +78,7 @@ function getRemainingPosts(rPosts) {
     <div class="imgdiv"><img src="${rPosts[item]._embedded["wp:featuredmedia"][0].source_url}"></div>
     
     <h3 class="blogPostHeading">${rPosts[item].title.rendered}</h3>
-    ${rPosts[item].excerpt.rendered}
+    <p>${rPosts[item].excerpt.rendered}</p>
     <button class="blogContinueBtn">Continue reading...</button>
     </a></div>
     

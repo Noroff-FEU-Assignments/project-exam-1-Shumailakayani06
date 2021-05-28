@@ -3,6 +3,7 @@ let url = "https://flowerpowerlcb.com/wp-json/wp/v2/posts?_embed&per_page=12";
 
 const carouselImages = document.querySelector (".carousel__images");
 const carouselButtons = document.querySelectorAll(".carousel__button");
+const body = document.getElementsByTagName("body")
 
 
 
@@ -104,7 +105,9 @@ const navSlide = () => {
     burger.addEventListener("click", () => {
         //toggle nav
         nav.classList.toggle("nav-active");
-        nav.style.display = "flex";
+        
+        
+        
 
         //animate links
 
@@ -128,31 +131,10 @@ navSlide();
 
 /* touch slide */
 
-let initialPosition = null;
-let moving = false;
-let transform = 0;
 
-window.addEventListener("mousedown" , (e) =>{
-     initialPosition = e.pageX;
-     moving = true;
-     const transformMatrix = window.getComputedStyle(carouselImages).getPropertyValue("transform");
-     if ( transformMatrix !== "none"){
-      transform = (transformMatrix.split(".")[0].trim());
-     }
-console.log(transform);
-     
-});
 
-window.addEventListener("mousemove" , (e)=> {
-    if(moving) {
 
-   
-const currentPosition = e.pageX;
-const diff = currentPosition - initialPosition;
-carouselImages.style.transform = `translateX(${diff}px)`;
-    }
-});
 
-window.addEventListener("mouseup" , (e) =>{
-    moving = false;
-})
+/* submit email */
+
+
