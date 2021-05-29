@@ -1,4 +1,7 @@
 let blogPost = document.querySelector(".blogPost");
+let breadbrumbsLink = document.querySelector(".breadcrumbs__link--active");
+
+
 
 
 
@@ -19,7 +22,7 @@ fetch(pUrl)
 .catch((error) =>{
     console.error('Error:' , error);
 });
-
+let crumbs = "";
 let postContent = "";
 function specificPost(data){
     console.log(data);
@@ -36,7 +39,13 @@ function specificPost(data){
     
     `;
 
+    crumbs += 
+    `${data.title.rendered}`;
+
+
+
     blogPost.innerHTML = postContent;
+    breadbrumbsLink.innerHTML = crumbs;
     document.title = data.title.rendered
 
     let clickIMG = document.querySelector(".clickImg");
@@ -91,6 +100,17 @@ const navSlide = () => {
 }
 
 navSlide();
+
+
+/* loader */
+
+
+window.addEventListener("load", function(){
+    const loader = document.querySelector(".loader");
+    
+    loader.className += " hidden";
+    
+    })
 
 
 

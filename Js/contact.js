@@ -94,4 +94,15 @@ const navSlide = () => {
 navSlide();
 
 
+/* loader */
+
+
+window.addEventListener("load", function(){
+    const loader = document.querySelector(".loader");
+    
+    loader.className += " hidden";
+    
+    })
+
+
 

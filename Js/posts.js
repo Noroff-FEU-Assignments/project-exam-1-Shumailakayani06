@@ -6,6 +6,16 @@ let blogPosts = document.querySelector(".posts");
 
 console.log(blogPosts);
 
+/* loader */
+
+
+window.addEventListener("load", function(){
+    const loader = document.querySelector(".loader");
+    
+    loader.className += " hidden";
+    
+    })
+
 fetch(url)
 .then (response => response.json())
 .then (data => {
@@ -139,5 +149,12 @@ const navSlide = () => {
 }
 
 navSlide();
+
+
+
+
+
+
+
 
 
