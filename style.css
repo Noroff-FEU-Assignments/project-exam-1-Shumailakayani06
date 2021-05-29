@@ -427,6 +427,21 @@ p {
 .recepieDiv {
   border: 2px solid #78b58d;
 }
+
+@media screen and (max-width: 768px) {
+  .imageDiv img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .recepieP {
+    margin-top: 3em;
+  }
+
+  .sPostDiv {
+    margin-left: 1em;
+  }
+}
 /* buttons style*/
 
 #btnScrollToTop {

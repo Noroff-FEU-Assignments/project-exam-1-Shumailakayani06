@@ -34,7 +34,7 @@ function specificPost(data){
     <div class="imageDiv">
     <a class ="clickImg"><img src="${data._embedded["wp:featuredmedia"][0].source_url}"></a></div>
     <div class="modalDiv"><img class="modalImg" src="${data._embedded["wp:featuredmedia"][0].source_url}"></div>
-    <p>${data.content.rendered}</p>
+    <p class="recepieP">${data.content.rendered}</p>
     <a href="posts.html">back to posts</a> 
     
     `;
