@@ -478,6 +478,8 @@ p {
   color: white;
   border: 2px solid #78b58d;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  letter-spacing: 1.5px;
+  font-size: 14px;
 }
 
 .blogContinueBtn:hover {
@@ -957,13 +959,63 @@ label {
   transition: transform 0.3s ease-out;
 }
 
+.carouselMob {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  margin: 4rem auto;
+  overflow: hidden;
+  position: relative;
+  width: 1080px;
+  border-bottom: 2px solid #eaf2ec;
+  border-top: 2px solid #eaf2ec;
+  transition: transform 0.3s ease-out;
+}
+
+.carouselIpad {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  margin: 4rem auto;
+  overflow: hidden;
+  position: relative;
+  width: 1080px;
+  border-bottom: 2px solid #eaf2ec;
+  border-top: 2px solid #eaf2ec;
+  transition: transform 0.3s ease-out;
+}
+
 .carousel__images {
   display: flex;
   transform: translateX(0);
   transition: transform 0.25s;
 }
 
+.carousel__images--mob {
+  display: flex;
+  transform: translateX(0);
+  transition: transform 0.25s;
+}
+
+.carousel__images--ipad {
+  display: flex;
+  transform: translateX(0);
+  transition: transform 0.25s;
+}
+
 .carousel__images img {
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.carousel__images--mob img {
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.carousel__images--ipad img {
   border-radius: 5px;
   margin: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
@@ -986,6 +1038,68 @@ label {
   z-index: 1;
 }
 
+.carousel__buttonmob {
+  background: #eaf2ec;
+  border: 0;
+  border-radius: 50%;
+  color: black;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 3rem;
+
+  position: absolute;
+  transition: opacity 0.25s;
+  width: 3rem;
+  z-index: 1;
+}
+
+.carousel__buttonipad {
+  background: #eaf2ec;
+  border: 0;
+  border-radius: 50%;
+  color: black;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 3rem;
+
+  position: absolute;
+  transition: opacity 0.25s;
+  width: 3rem;
+  z-index: 1;
+}
+
+#previousmob {
+  left: 5px;
+}
+
+#nextmob {
+  right: 5px;
+}
+
+#previousmob:hover {
+  opacity: 0.5;
+}
+#nextmob:hover {
+  opacity: 0.5;
+}
+
+#previousipad {
+  left: 5px;
+}
+
+#nextipad {
+  right: 5px;
+}
+
+#previousipad:hover {
+  opacity: 0.5;
+}
+#nextipad:hover {
+  opacity: 0.5;
+}
+
 @media screen and (max-width: 768px) {
   .carousel {
     width: 350px;
@@ -998,19 +1112,6 @@ label {
   }
 
   .carousel__button {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .carousel {
-    width: 700px;
-    margin: 0s;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .carousel__buttons {
     display: none;
   }
 }
