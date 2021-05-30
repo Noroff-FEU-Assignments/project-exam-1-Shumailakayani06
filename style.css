@@ -154,7 +154,7 @@ img {
   text-align: center;
   margin-bottom: 3em;
 }
-.allButton {
+.llButton {
   height: 3em;
   width: 300px;
   background-color: white;
@@ -164,7 +164,7 @@ img {
   letter-spacing: 2px;
 }
 
-.allButton:hover {
+.llButton:hover {
   cursor: pointer;
   background-color: #78b58d;
   color: white;
