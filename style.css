@@ -385,8 +385,7 @@ p {
 }
 
 .sPostDiv {
-  display: flex;
-  margin: 4em;
+  margin: 1em;
 }
 
 .specificPostHeading {
@@ -426,6 +425,19 @@ p {
 
 .recepieDiv {
   border: 2px solid #78b58d;
+}
+
+.reciepe {
+  font-size: 20px;
+  letter-spacing: 2px;
+  line-height: 1.6;
+  margin-left: 1em;
+}
+
+.sPostDiv h2 {
+  color: #78b58d;
+  font-size: 2em;
+  margin: 0.6em;
 }
 
 @media screen and (max-width: 768px) {
@@ -616,11 +628,12 @@ footer {
 
 /* contact page*/
 .formDiv {
-  margin: 2em;
-  padding: 3em;
+  margin: 1em;
+  padding: 1em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   display: inline-block;
   background: #eaf2ec;
+  max-width: 330px;
 }
 .contact-form div {
   margin: 2em;
@@ -710,6 +723,13 @@ label {
   .contactImg {
     height: 250px;
     width: 350px;
+    margin: 0;
+  }
+  .contactDivInfo {
+    margin-left: 1em;
+  }
+  .contactDivInfo li {
+    margin-left: 1em;
   }
 }
 
@@ -776,7 +796,7 @@ label {
   }
 
   .aboutImages {
-    margin-left: 1em;
+    margin-left: 0em;
   }
 
   .aboutUsDiv {
@@ -1031,7 +1051,6 @@ label {
   font-size: 1.5rem;
   font-weight: bold;
   height: 3rem;
-
   position: absolute;
   transition: opacity 0.25s;
   width: 3rem;
@@ -1070,54 +1089,8 @@ label {
   z-index: 1;
 }
 
-#previousmob {
-  left: 5px;
-}
-
-#nextmob {
-  right: 5px;
-}
-
-#previousmob:hover {
-  opacity: 0.5;
-}
-#nextmob:hover {
-  opacity: 0.5;
-}
-
-#previousipad {
-  left: 5px;
-}
-
-#nextipad {
-  right: 5px;
-}
-
-#previousipad:hover {
-  opacity: 0.5;
-}
-#nextipad:hover {
-  opacity: 0.5;
-}
-
-@media screen and (max-width: 768px) {
-  .carousel {
-    width: 350px;
-    margin: 0s;
-  }
-
-  img {
-    height: 270px;
-    width: 350px;
-  }
-
-  .carousel__button {
-    display: none;
-  }
-}
-
 #previous {
-  left: 5px;
+  left: 15px;
 }
 
 #next {
@@ -1129,4 +1102,27 @@ label {
 }
 #next:hover {
   opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel {
+    width: 350px;
+    margin: 0s;
+  }
+
+  img {
+    height: 250px;
+    width: 370px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+  .carousel {
+    width: 720px;
+  }
+
+  img {
+    height: 250px;
+    width: 350px;
+  }
 }

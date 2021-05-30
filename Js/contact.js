@@ -84,9 +84,10 @@ const navSlide = () => {
             } else {
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
             }
-        });
-    //burger animation
+             //burger animation
     burger.classList.toggle("toggle");
+        });
+   
    
     });
 }
@@ -103,6 +104,14 @@ window.addEventListener("load", function(){
     loader.className += " hidden";
     
     })
+
+
+    /* scroll to top button function*/
+    const btnScrollToTop = document.querySelector("#btnScrollToTop");
+
+    btnScrollToTop.addEventListener("click", function () {
+        window.scrollTo(0, 0);
+    });
 
 
 

@@ -1,5 +1,6 @@
 let blogPost = document.querySelector(".blogPost");
 let breadbrumbsLink = document.querySelector(".breadcrumbs__link--active");
+let reciepe = document.querySelector(".reciepe");
 
 
 
@@ -24,6 +25,7 @@ fetch(pUrl)
 });
 let crumbs = "";
 let postContent = "";
+let recepieP = "";
 function specificPost(data){
     console.log(data);
     
@@ -34,24 +36,31 @@ function specificPost(data){
     <div class="imageDiv">
     <a class ="clickImg"><img src="${data._embedded["wp:featuredmedia"][0].source_url}"></a></div>
     <div class="modalDiv"><img class="modalImg" src="${data._embedded["wp:featuredmedia"][0].source_url}"></div>
-    <p class="recepieP">${data.content.rendered}</p>
-    <a href="posts.html">back to posts</a> 
+    
     
     `;
+
+  recepieP += `
+  ${data.content.rendered}
+  `
 
     crumbs += 
     `${data.title.rendered}`;
 
-
+   
 
     blogPost.innerHTML = postContent;
     breadbrumbsLink.innerHTML = crumbs;
+    reciepe.innerHTML = recepieP;
     document.title = data.title.rendered
 
     let clickIMG = document.querySelector(".clickImg");
     let modalDIV = document.querySelector(".modalDiv");
+    
+    
     console.log(clickIMG);
     console.log(modalDIV);
+    
 
    
     
@@ -92,9 +101,10 @@ const navSlide = () => {
             } else {
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
             }
-        });
-    //burger animation
+              //burger animation
     burger.classList.toggle("toggle");
+        });
+   
    
     });
 }

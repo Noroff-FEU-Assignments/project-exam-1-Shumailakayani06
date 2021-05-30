@@ -54,35 +54,43 @@ for(let element in data){
     `
     ;
 
-    carouselMob +=`
-    <a href="blogpost.html?id=${data[element].id}">
-    <img class="carousel_image" src="${data[element]._embedded["wp:featuredmedia"][0].source_url}" alt="blog post images">
-    </a>
-    `;
 
-    carouselIpad += ` <a href="blogpost.html?id=${data[element].id}">
-    <img class="carousel_image" src="${data[element]._embedded["wp:featuredmedia"][0].source_url}" alt="blog post images">
-    </a> `
- 
 
     console.log(data[element]);
     console.log(apiImages.length);
 }
 carouselImages.innerHTML= homeBlogPosts;
-carouselImagesMob.innerHTML =carouselMob;
-carouselImagesIpad.innerHTML= carouselIpad;
+
 
 
 
 /* carousel slider */
 
-const numberOfImages = apiImages.length/3-1;
+let numberOfImages = apiImages.length/3-1;
 let imageIndex = 1;
 let translateX = 0;
+let movePX = 1080;
+getAmountofSlides()
+getAmountMid ()
 
 
+function getAmountofSlides(){
+    const mq = window.matchMedia("(max-width:768px)")
+    if(mq.matches){
+        console.log("MQ" + mq.matches)
+        numberOfImages = apiImages.length/1
+        movePX = 390;
+    }
+}
 
-
+function getAmountMid(){
+    const mQ = window.matchMedia("(min-width: 768px) and (max-width: 1100px)")
+    if (mQ.matches){
+        console.log("MQ" + mQ.matches)
+        numberOfImages = apiImages.length/2
+        movePX = 740;
+    }
+}
 
 
 
@@ -93,92 +101,25 @@ carouselButtons.forEach(buttons =>{
        if(event.target.id === "previouss" ){
            if(imageIndex !== 1){
                imageIndex--;
-               translateX += 1080;
+               translateX += movePX;
            }
        } else{
            if (imageIndex !== numberOfImages) {
                imageIndex++;
-               translateX -= 1080;
+               translateX -= movePX;
            }
        }
        carouselImages.style.transform = `translateX(${translateX}px)`;
     });
     })
     ;
+   
     
     }
 
-
-
-
-    /* carousel mob */
-carouselButtonMob.forEach(buttons =>{
-    buttons.addEventListener("click", event => {
-        
-       if(event.target.id === "previoussmob" ){
-           if(imageIndex !== 1){
-               imageIndex--;
-               translateX += 1080;
-           }
-       } else{
-           if (imageIndex !== carouselImagesMob ) {
-               imageIndex++;
-               translateX -= 1080;
-           }
-       }
-       carouselImagesMob.style.transform = `translateX(${translateX}px)`;
-    });
-    })
-    ; 
-
-
-
-
-
-
-/* carousel Ipad */
-
-
-
-
-carouselButtonIpad.forEach(buttons =>{
-    buttons.addEventListener("click", event => {
-        
-       if(event.target.id === "previoussipad" ){
-           if(imageIndex !== 1){
-               imageIndex--;
-               translateX += 1080;
-           }
-       } else{
-           if (imageIndex !== carouselImagesIpad ) {
-               imageIndex++;
-               translateX -= 1080;
-           }
-       }
-       carouselImagesIpad.style.transform = `translateX(${translateX}px)`;
-    });
-    })
-    ;
-
-
-
-
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
 
 
 
@@ -207,14 +148,35 @@ const navSlide = () => {
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
                 
             }
+
+            burger.classList.toggle("toggle");
         });
-    //burger animation
-    burger.classList.toggle("toggle");
+    
+    
    
     });
 }
 
 navSlide();
+
+
+
+/* scroll to top button function*/
+const btnScrollToTop = document.querySelector("#btnScrollToTop");
+
+btnScrollToTop.addEventListener("click", function () {
+    window.scrollTo(0, 0);
+});
+
+
+
+
+let resent = document.getElementById("myCarousel").clientWidth;
+addEventListener("resize", function(){
+    let current = document.getElementById ("myCarousel").clientWidth;
+    if(current != resent) this.location.reload();
+    resent = current;
+});
 
 
 
