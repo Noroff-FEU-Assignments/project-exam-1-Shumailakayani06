@@ -1161,7 +1161,7 @@ label {
 @media screen and (max-width: 768px) {
   .carousel {
     width: 350px;
-    margin: 0s;
+    margin: 0;
   }
 
   img {
