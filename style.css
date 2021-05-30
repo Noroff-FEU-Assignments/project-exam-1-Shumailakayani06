@@ -171,6 +171,10 @@ img {
   border: 2px solid #78b58d;
 }
 
+.fas.fa-arrow-right {
+  margin-left: 1em;
+}
+
 .headerpic img {
   filter: brightness(20%);
 }
@@ -693,6 +697,7 @@ footer {
 .contactDiv {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .contactDivInfo {
