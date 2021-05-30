@@ -153,6 +153,7 @@ img {
 .viewAllPosts {
   text-align: center;
   margin-bottom: 3em;
+  margin-top: 3em;
 }
 .llButton {
   height: 3em;
@@ -162,6 +163,7 @@ img {
   border: 2px solid rgb(221, 251, 221);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   letter-spacing: 2px;
+  padding: 0.8em;
 }
 
 .llButton:hover {
@@ -1149,11 +1151,11 @@ label {
 }
 
 #previous {
-  left: 15px;
+  left: 10px;
 }
 
 #next {
-  right: 5px;
+  right: 10px;
 }
 
 #previous:hover {
@@ -1166,12 +1168,16 @@ label {
 @media screen and (max-width: 768px) {
   .carousel {
     width: 350px;
-    margin: 0;
+    margin-left: 0.5em;
   }
 
   img {
     height: 250px;
     width: 370px;
+  }
+
+  #next {
+    right: 5px;
   }
 }
 
