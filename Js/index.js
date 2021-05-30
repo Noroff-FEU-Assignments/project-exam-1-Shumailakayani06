@@ -20,7 +20,7 @@ window.addEventListener("load", function(){
     
     })
     
-
+ /* fetching the api section */
 let apiImages = [];
 
 fetch(url)
@@ -94,7 +94,7 @@ function getAmountMid(){
 
 
 
-
+/* carousel btns function */
 carouselButtons.forEach(buttons =>{
     buttons.addEventListener("click", event => {
         
@@ -170,7 +170,7 @@ btnScrollToTop.addEventListener("click", function () {
 
 
 
-
+/* refresh carousel */ 
 let resent = document.getElementById("myCarousel").clientWidth;
 addEventListener("resize", function(){
     let current = document.getElementById ("myCarousel").clientWidth;
