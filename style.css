@@ -275,7 +275,7 @@ a {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   body {
     overflow-x: hidden;
   }
@@ -372,6 +372,25 @@ p {
 
 .remainingPosts {
   display: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .postDiv {
+    width: 100%;
+    margin-left: 1em;
+  }
+  .postDiv img {
+    width: 600px;
+    height: 400px;
+  }
+  .imgdiv {
+    width: 600px;
+    height: 400px;
+  }
+
+  .posts {
+    text-align: left;
+  }
 }
 
 /* specific blog post site */
@@ -792,7 +811,7 @@ label {
 @media screen and (max-width: 768px) {
   .aboutImages img {
     height: 250px;
-    width: 350px;
+    width: 330px;
   }
 
   .aboutImages {
@@ -800,7 +819,7 @@ label {
   }
 
   .aboutUsDiv {
-    height: 250px;
+    height: 230px;
     width: 350px;
     margin-bottom: 3em;
   }
@@ -816,11 +835,24 @@ label {
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .aboutUsDiv p {
-    margin-left: 0;
+    margin-left: 1em;
   }
 
   .aboutUsDiv h4 {
-    margin-left: 0;
+    margin-left: 0.8em;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .aboutImages img {
+    height: 350px;
+    width: 450px;
+  }
+  .aboutUsDiv {
+    height: 350px;
+    width: 450px;
   }
 }
 
