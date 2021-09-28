@@ -55,6 +55,52 @@ img {
   width: 100%;
 }
 
+/* main blog post */
+
+.mainSub {
+  font-family: "Architects Daughter", cursive;
+  color: #489061;
+  margin-left: 2em;
+  letter-spacing: 1px;
+  margin: 2em;
+}
+
+.mainPosts,
+.allBlogs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.mainPosts div,
+.allBlogs div {
+  background-color: #eaf2ec;
+  margin: 3em;
+  width: 350px;
+  box-shadow: 4px 5px 6px darkgray;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.mainPosts div:hover,
+.allBlogs div:hover {
+  transform: scale(1.1);
+  opacity: 70%;
+}
+.mainPosts div img,
+.allBlogs div img {
+  width: 350px;
+  height: 240px;
+}
+.mainPosts div h2,
+.allBlogs div h2 {
+  font-family: "Architects Daughter", cursive;
+  letter-spacing: 2px;
+  color: #489061;
+  text-align: center;
+  padding: 0.5em;
+}
+
 /* home*/
 
 .LemonPicDiv {

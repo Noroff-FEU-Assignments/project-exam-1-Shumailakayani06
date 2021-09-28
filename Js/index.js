@@ -1,13 +1,10 @@
 let url = "https://flowerpowerlcb.com/wp-json/wp/v2/posts?_embed&per_page=12";
 
 
-const carouselImages = document.querySelector (".carousel__images");
-const carouselButtons = document.querySelectorAll(".carousel__button");
+
 const body = document.getElementsByTagName("body")
-const carouselImagesMob = document.querySelector(".carousel__images--mob")
-const carouselImagesIpad = document.querySelector(".carousel__images--ipad")
-const carouselButtonMob = document.querySelector(".carousel__buttonmob")
-const carouselButtonIpad= document.querySelector(".carousel__buttonipad")
+const mainPosts = document.querySelector('.mainPosts');
+
 
 
 /* loader */
@@ -19,103 +16,150 @@ window.addEventListener("load", function(){
     loader.className += " hidden";
     
     })
-    
- /* fetching the api section */
-let apiImages = [];
-
-fetch(url)
-.then (response => response.json())
-.then (data => {
-
-    homePosts(data);
-    console.log(data)
- 
-})
-
-.catch((error) => {
-    console.error('Error:', error);
-});
-
-console.log(apiImages);
-let carouselMob = [];
-let carouselIpad = [];
-function homePosts(data){
-let homeBlogPosts =[];
-for(let element in data){
-    let imageSrc = data[element]._embedded["wp:featuredmedia"][0].source_url;
-    apiImages.push(imageSrc)
-
-    homeBlogPosts += `
-    
-    <a href="blogpost.html?id=${data[element].id}">
-    <img class="carousel_image" src="${data[element]._embedded["wp:featuredmedia"][0].source_url}" alt="blog post images">
-    </a>
-    
-    `
-    ;
 
 
-
-    console.log(data[element]);
-    console.log(apiImages.length);
-}
-carouselImages.innerHTML= homeBlogPosts;
+    /* main post site */ 
 
 
-
-
-/* carousel slider */
-
-let numberOfImages = apiImages.length/3-1;
-let imageIndex = 1;
-let translateX = 0;
-let movePX = 1080;
-getAmountofSlides()
-getAmountMid ()
-
-
-function getAmountofSlides(){
-    const mq = window.matchMedia("(max-width:768px)")
-    if(mq.matches){
-        console.log("MQ" + mq.matches)
-        numberOfImages = apiImages.length/1
-        movePX = 390;
-    }
-}
-
-function getAmountMid(){
-    const mQ = window.matchMedia("(min-width: 768px) and (max-width: 1100px)")
-    if (mQ.matches){
-        console.log("MQ" + mQ.matches)
-        numberOfImages = apiImages.length/2
-        movePX = 740;
-    }
-}
-
-
-
-/* carousel btns function */
-carouselButtons.forEach(buttons =>{
-    buttons.addEventListener("click", event => {
+    const picArray = [
+       {
+           img : "/images/pic1.jpg",
+           title : "Healthy breakfast smoothie",
+        },
+       {
+           img : "/images/pic2.jpg",
+           title : "Chicken and pommogranate salad",
+        },
+       {
+           img : "/images/pic3.jpg",
+           title : "Berry smoothie bowl",
+        },
+       {
+           img : "/images/pic4.jpg",
+           title : "Healthy breakfast ideas",
+        },
+       {
+           img : "/images/pic5.jpg",
+           title : "Turkish shakshuka",
+        },
+       {
+           img : "/images/pic6.jpg",
+           title : "Banana pancakes recepie",
         
-       if(event.target.id === "previouss" ){
-           if(imageIndex !== 1){
-               imageIndex--;
-               translateX += movePX;
-           }
-       } else{
-           if (imageIndex !== numberOfImages) {
-               imageIndex++;
-               translateX -= movePX;
-           }
-       }
-       carouselImages.style.transform = `translateX(${translateX}px)`;
-    });
-    })
-    ;
+        }
+     
+    ]
+
+  picArray.forEach((item) =>{
+      
+      mainPosts.innerHTML += `
+      <div>
+      <img src="${item.img}">
+      <h2>${item.title}</h2>
+      
+      
+      </div>
+      `
+  })
+
+    
+    
+//  /* fetching the api section */
+// let apiImages = [];
+
+// fetch(url)
+// .then (response => response.json())
+// .then (data => {
+
+//     homePosts(data);
+//     console.log(data)
+ 
+// })
+
+// .catch((error) => {
+//     console.error('Error:', error);
+// });
+
+// console.log(apiImages);
+// let carouselMob = [];
+// let carouselIpad = [];
+// function homePosts(data){
+// let homeBlogPosts =[];
+// for(let element in data){
+//     let imageSrc = data[element]._embedded["wp:featuredmedia"][0].source_url;
+//     apiImages.push(imageSrc)
+
+//     homeBlogPosts += `
+    
+//     <a href="blogpost.html?id=${data[element].id}">
+//     <img class="carousel_image" src="${data[element]._embedded["wp:featuredmedia"][0].source_url}" alt="blog post images">
+//     </a>
+    
+//     `
+//     ;
+
+
+
+//     console.log(data[element]);
+//     console.log(apiImages.length);
+// }
+// carouselImages.innerHTML= homeBlogPosts;
+
+
+
+
+// /* carousel slider */
+
+// let numberOfImages = apiImages.length/3-1;
+// let imageIndex = 1;
+// let translateX = 0;
+// let movePX = 1080;
+// getAmountofSlides()
+// getAmountMid ()
+
+
+// function getAmountofSlides(){
+//     const mq = window.matchMedia("(max-width:768px)")
+//     if(mq.matches){
+//         console.log("MQ" + mq.matches)
+//         numberOfImages = apiImages.length/1
+//         movePX = 390;
+//     }
+// }
+
+// function getAmountMid(){
+//     const mQ = window.matchMedia("(min-width: 768px) and (max-width: 1100px)")
+//     if (mQ.matches){
+//         console.log("MQ" + mQ.matches)
+//         numberOfImages = apiImages.length/2
+//         movePX = 740;
+//     }
+// }
+
+
+
+// /* carousel btns function */
+// carouselButtons.forEach(buttons =>{
+//     buttons.addEventListener("click", event => {
+        
+//        if(event.target.id === "previouss" ){
+//            if(imageIndex !== 1){
+//                imageIndex--;
+//                translateX += movePX;
+//            }
+//        } else{
+//            if (imageIndex !== numberOfImages) {
+//                imageIndex++;
+//                translateX -= movePX;
+//            }
+//        }
+//        carouselImages.style.transform = `translateX(${translateX}px)`;
+//     });
+//     })
+//     ;
    
     
-    }
+//     }
 
     
 
@@ -170,13 +214,13 @@ btnScrollToTop.addEventListener("click", function () {
 
 
 
-/* refresh carousel */ 
-let resent = document.getElementById("myCarousel").clientWidth;
-addEventListener("resize", function(){
-    let current = document.getElementById ("myCarousel").clientWidth;
-    if(current != resent) this.location.reload();
-    resent = current;
-});
+// /* refresh carousel */ 
+// let resent = document.getElementById("myCarousel").clientWidth;
+// addEventListener("resize", function(){
+//     let current = document.getElementById ("myCarousel").clientWidth;
+//     if(current != resent) this.location.reload();
+//     resent = current;
+// });
 
 
 
